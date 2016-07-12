@@ -1,0 +1,11 @@
+{
+  "name": "serve-acme-http-01-challenge",
+  "version": "1.0.0",
+  "description": "Serve files for ACME http-01 challenges",
+  "main": "index.js",
+  "author": "Aria Stewart <aredridel@dinhe.net<",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
