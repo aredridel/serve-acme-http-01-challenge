@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
 
@@ -11,9 +12,21 @@ if (!process.argv[3]) {
     process.exit(1);
 }
 
-const path = require('path');
-
 const static = express.static(process.argv[2]);
 
 app.get('/.well-known/acme-challenge/:challenge', static);
-app.listen(process.argv[3]);
+const server = app.listen(process.argv[3], (err) => {
+    if (err) {
+        console.warn(err);
+        process.exit(1);
+    } else {
+        process.on('SIGTERM', close);
+        process.on('SIGINT', close);
+        process.on('SIGQUIT', close);
+    }
+});
+
+function close() {
+    server.close();
+    process.exit();
+}
