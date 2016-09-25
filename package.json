@@ -1,6 +1,6 @@
 {
   "name": "serve-acme-http-01-challenge",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Serve files for ACME http-01 challenges",
   "main": "index.js",
   "bin": "index.js",
