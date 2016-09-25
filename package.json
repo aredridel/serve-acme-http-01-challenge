@@ -7,6 +7,19 @@
   "author": "Aria Stewart <aredridel@dinhe.net<",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "systemd-socket": "0.0.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "rules": {
+      "valid-typeof": "error",
+      "no-undef": "error"
+    },
+    "env": {
+      "node": true
+    }
   }
 }
